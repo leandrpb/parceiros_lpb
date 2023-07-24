@@ -5,7 +5,6 @@
     <App id="app">
         <f:FlexibleColumnLayout 
             id="fc"
-            layout="{layout>/visual}"
-        />
+            layout="{layout>/visual}" />
     </App>
 </mvc:View>
