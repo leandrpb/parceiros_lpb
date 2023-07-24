@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZSI_PARCEIRO_FIORI_LPB_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Parceiro" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CodigoParceiro"/>
+                </Key>
+                <Property Name="CodigoParceiro" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Codigo Parceiro" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Tipo" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Tipo Parceiro"/>
+                <Property Name="Nome1" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Nome Parceiro 1"/>
+                <Property Name="Nome2" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Nome Parceiro 2"/>
+                <Property Name="TermoDePesquisa1" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Termo de Pesquisa 1"/>
+                <Property Name="TermoDePesquisa2" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Termo de Pesquisa 2"/>
+                <Property Name="Rua" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Rua"/>
+                <Property Name="NumeroCasa" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Numero da Casa"/>
+                <Property Name="Bairro" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bairro"/>
+                <Property Name="Cidade" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Cidade"/>
+                <Property Name="Estado" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Estado"/>
+                <Property Name="Pais" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="País"/>
+                <Property Name="CEP" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Código Postal" sap:semantics="zip"/>
+            </EntityType>
+            <EntityContainer Name="ZSI_PARCEIRO_FIORI_LPB_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ParceiroSet" EntityType="ZSI_PARCEIRO_FIORI_LPB_SRV.Parceiro" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="https://vm63.4hub.cloud:44363/sap/opu/odata/sap/ZSI_PARCEIRO_FIORI_LPB_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://vm63.4hub.cloud:44363/sap/opu/odata/sap/ZSI_PARCEIRO_FIORI_LPB_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

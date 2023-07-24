@@ -1,0 +1,152 @@
+{
+  "_version": "1.28.0",
+  "sap.app": {
+    "id": "zappfreestylelpb.parceiroslpb",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.10.1",
+      "toolsId": "37d30c23-a1e2-4728-bc9d-827cdb748fe1"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZSI_PARCEIRO_FIORI_LPB_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.84.7",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "zappfreestylelpb.parceiroslpb.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {"useBatch": false}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "zappfreestylelpb.parceiroslpb.view",
+        "controlId": "fc",
+        "transition": "fade"
+      },
+      "routes": [
+        {
+          "name": "RouteListaParceiros",
+          "pattern": ":?query:",
+          "target": [
+            "TargetListaParceiros"
+            
+          ]
+        },
+        {
+          "name": "RouteParceiro",
+          "pattern": "parceiro/{CodigoParceiro}",
+          "target": [ "TargetListaParceiros",
+                      "TargetParceiro"
+          ]
+        },
+        {
+          "name": "RouteCriarParceiro",
+          "pattern": "criarparceiro/{CodigoParceiro}",
+          "target": [ "TargetCriarParceiro"
+
+          ]
+        }
+      ],
+      "targets": {
+        "TargetListaParceiros": {
+          "viewType": "XML",
+          "transition": "fade",
+          "controlAggregation": "beginColumnPages",
+          "clearControlAggregation": false,
+          "viewId": "ListaParceiros",
+          "viewName": "ListaParceiros"
+        },
+        "TargetParceiro": {
+          "viewType": "XML",
+          "transition": "fade",
+          "controlAggregation": "midColumnPages",
+          "clearControlAggregation": false,
+          "viewId": "Parceiro",
+          "viewName": "Parceiro"
+        },
+        "TargetCriarParceiro": {
+          "viewType": "XML",
+          "transition": "fade",
+          "controlAggregation": "beginColumnPages",
+          "clearControlAggregation": false,
+          "viewId": "CriarParceiro",
+          "viewName": "CriarParceiro"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "zappfreestylelpb.parceiroslpb.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

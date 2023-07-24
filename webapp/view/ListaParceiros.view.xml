@@ -1,0 +1,31 @@
+<mvc:View xmlns:table="sap.ui.table" 
+    controllerName="zappfreestylelpb.parceiroslpb.controller.ListaParceiros"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>titleLista}">
+        <Table id="tab" items="{/ParceiroSet}" growing="true" mode="SingleSelectLeft">
+            <headerToolbar>
+                <OverflowToolbar>
+                    <ToolbarSpacer />
+                    <Button text="Criar" type="Emphasized" press="onCriarButton"/>
+                    <Button text="Deletar" type="Negative" press="onDeletarButton"/>
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column>
+                    <Text text="Parceiro" />
+                </Column>
+                <Column>
+                     <Text text="Tipo" />
+                </Column>
+           </columns>
+           <items>
+                <ColumnListItem id="listadeColuna" type="Navigation" press="onClickItem">                    
+                    <ObjectIdentifier id="Coluna1" title="Código: {CodigoParceiro}" text="Nome: {Nome1} {Nome2}" />
+                    <Text id="TipoText" text="{Tipo}"/> 
+                </ColumnListItem>
+            
+           </items>
+        </Table>
+    </Page>
+</mvc:View>

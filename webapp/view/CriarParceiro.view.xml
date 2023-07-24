@@ -1,0 +1,168 @@
+<mvc:View
+	controllerName="zappfreestylelpb.parceiroslpb.controller.CriarParceiro"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+    xmlns:uxap="sap.uxap"
+    xmlns:layout="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+	busyIndicatorDelay="0"
+
+>
+<Page id="page" title="{i18n>title}">
+   <uxap:ObjectPageLayout
+       alwaysShowContentHeader="false"
+       backgroundDesignAnchorBar=""
+       enableLazyLoading="false"
+       flexEnabled="false"
+       headerContentPinnable="true"
+       height="100%"
+       isChildPage="false"
+       preserveHeaderStateOnScroll="false"
+       sectionTitleLevel="Auto"
+       showAnchorBar="true"
+       showAnchorBarPopover="true"
+       showEditHeaderButton="false"
+       showFooter="true"
+       showHeaderContent="true"
+       showOnlyHighImportance="false"
+       showTitleInHeaderContent="false"
+       subSectionLayout="TitleOnTop"
+       toggleHeaderOnTitleClick="true"
+       upperCaseAnchorBar="true"
+       useIconTabBar="false"
+       useTwoColumnsForLargeScreen="false"
+   >
+      <uxap:headerTitle>
+        <uxap:ObjectPageHeader objectTitle="Criar Parceiro" width="50%">
+            <uxap:actions>
+                <OverflowToolbarButton icon="sap-icon://save" press="onSaveButton" text="Save" type="Emphasized"/>
+                <OverflowToolbarButton icon="sap-icon://cancel" press="onCancelButton" text="Cancel" type="Reject"/>
+            </uxap:actions>
+        </uxap:ObjectPageHeader>
+
+      </uxap:headerTitle>
+      <uxap:headerContent>
+        <ObjectAttribute  text="Digite as informações para criar um novo parceiro" textDirection="Inherit"  title="" />
+      </uxap:headerContent>
+      <uxap:sections>
+        <uxap:ObjectPageSection  showTitle="true"  titleUppercase="false" title="Dados Parceiro" visible="true">
+            <uxap:subSections>
+                <uxap:ObjectPageSubSection mode="Expanded" showTitle="false" titleUppercase="false" visible="true">
+                    <uxap:blocks>
+                        <form:SimpleForm
+                            id="DadosParceiro"
+                            title=""
+                            adjustLabelSpan="true"
+                            backgroundDesign="Transparent"
+                            breakpointL="1024"
+                            breakpointM="600"
+                            breakpointXL="1440"
+                            columnsL="2"
+                            columnsM="1"
+                            columnsXL="-1"
+                            editable="true"
+                            emptySpanL="0"
+                            emptySpanM="0"
+                            emptySpanS="0"
+                            emptySpanXL="-1"
+                            labelMinWidth="192"
+                            labelSpanL="2"
+                            labelSpanM="2"
+                            labelSpanS="12"
+                            labelSpanXL="-1"
+                            layout="ResponsiveGridLayout"
+                            maxContainerCols="2"
+                            minWidth="-1"
+                            singleContainerFullSize="true"
+                            width=""
+                        >
+                            <form:content>
+                                <Label text="Código Parceiro" />
+                                <Input editable="true" value="{CodigoParceiro}" width="40%"/>
+                                <Label text="Tipo" />  
+                                <ComboBox id="cboTipo" editable="true" value="{Tipo}" enabled="true" items="{/TipoParceiroSet}" maxWidth="30%" >
+                                    <core:ListItem key="{TipoKey}" text="{DescricaoTipo}" />
+                                </ComboBox>
+
+                                <Label text="Nome Parceiro" />
+                                <layout:HorizontalLayout enabled="true">
+                                    <layout:content>
+                                        <Input value="{Nome1}" editable="true" />
+                                        <Input value="{Nome2}" editable="true" />
+                                    </layout:content>
+                                </layout:HorizontalLayout>
+
+                                <Label text="Termo Pesquisa" />
+                                <layout:HorizontalLayout enabled="true">
+                                    <layout:content>
+                                        <Input value="{TermoDePesquisa1}" editable="true" />
+                                        <Input value="{TermoDePesquisa2}" editable="true" />
+                                    </layout:content>
+                                </layout:HorizontalLayout>                                
+                            </form:content>
+                        </form:SimpleForm>
+                    </uxap:blocks>
+                </uxap:ObjectPageSubSection>
+            </uxap:subSections>
+        </uxap:ObjectPageSection>
+        <uxap:ObjectPageSection  titleUppercase="false" title="Endereço" width="50%">
+            <uxap:subSections>
+                <uxap:ObjectPageSubSection title="Endereço" mode="Expanded" showTitle="true" titleUppercase="false" visible="true">
+                    <uxap:blocks>
+                        <form:SimpleForm
+                            id="Endereco"
+                            title=""
+                            adjustLabelSpan="true"
+                            backgroundDesign="Transparent"
+                            breakpointL="1024"
+                            breakpointM="600"
+                            breakpointXL="1440"
+                            columnsL="2"
+                            columnsM="1"
+                            columnsXL="-1"
+                            editable="true"
+                            emptySpanL="0"
+                            emptySpanM="0"
+                            emptySpanS="0"
+                            emptySpanXL="-1"
+                            labelMinWidth="192"
+                            labelSpanL="2"
+                            labelSpanM="2"
+                            labelSpanS="12"
+                            labelSpanXL="-1"
+                            layout="ResponsiveGridLayout"
+                            maxContainerCols="2"
+                            minWidth="-1"
+                            singleContainerFullSize="true"
+                            width=""
+                        >
+                            <form:content>
+                                <Label text="Rua" />
+                                <Input value="{Rua}" editable="true" width="60%"/>
+                                <Label text="Número" />
+                                <Input value="{NumeroCasa}" editable="true" width="30%"/>  
+                                <Label text="Bairro" />
+                                <Input value="{Bairro}" editable="true" width="30%"/>
+                                <Label text="Cidade" />
+                                <Input value="{Cidade}" editable="true" width="30%"/>
+                                <Label text="Estado" />
+                                <Input value="{Estado}" editable="true" width="30%"/>
+                                <Label text="País" />
+                                <Input value="{Pais}" editable="true" width="30%"/>
+                                <Label text="CEP" />
+                                <Input value="{CEP}" editable="true" width="30%"/>
+
+                            </form:content>
+                        </form:SimpleForm>
+                    </uxap:blocks>
+                </uxap:ObjectPageSubSection>
+            </uxap:subSections>
+        </uxap:ObjectPageSection>
+      </uxap:sections>
+
+   </uxap:ObjectPageLayout>
+</Page>
+</mvc:View>
