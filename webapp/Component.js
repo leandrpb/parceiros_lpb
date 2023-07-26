@@ -38,7 +38,8 @@ sap.ui.define([
                 
                 // Bind method to NavTo Router
                 this.getRouter().attachBeforeRouteMatched(this.onChangeModel, this);
-
+            
+                
                 // enable routing
                 this.getRouter().initialize();
 
